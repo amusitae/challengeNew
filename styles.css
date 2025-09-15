@@ -1,0 +1,399 @@
+/* Reset & basics */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Helvetica Neue";
+  color: #222;
+  background: #f7f7f7;
+  line-height: 1.4;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+/* Accessibility helper */
+.sr-only { position: absolute; left: -9999px; }
+
+/* HEADER */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #e6e6e6;
+  position: sticky;
+  top: 0;
+  z-index: 60;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+/* Logo */
+.logo { display: inline-flex; align-items: center; text-decoration: none; }
+
+/* NAVBAR (desktop) */
+.navbar { display: none; }
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display:flex;
+  gap: 12px;
+}
+.navbar a {
+  display:inline-block;
+  padding:8px 12px;
+  text-decoration:none;
+  color:#0b6b3a;
+  border-radius:6px;
+  font-weight: 600;
+}
+.navbar a:hover { background: rgba(11,107,58,0.08); }
+
+/* CSS-only hamburger (mobile) */
+.css-hamburger {
+  position: relative;
+  display: inline-block;
+}
+.css-hamburger input[type="checkbox"] {
+  position: absolute;
+  left: -9999px;
+}
+/* hamburger button */
+.hamburger-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  padding: 8px;
+  cursor: pointer;
+  user-select: none;
+  background: transparent;
+  border-radius: 6px;
+}
+
+/* MOBILE MENU (hidden by default) */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 78%;
+  max-width: 320px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -6px 0 20px rgba(0,0,0,0.12);
+  transition: right 220ms ease;
+  z-index: 80;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+}
+.mobile-menu ul { list-style: none; padding: 0; margin: 24px 0 0; }
+.mobile-menu a {
+  display:block;
+  padding: 12px 8px;
+  text-decoration: none;
+  color: #0b6b3a;
+  border-bottom: 1px solid #eee;
+}
+
+/* When checkbox is checked, slide menu in */
+.css-hamburger input[type="checkbox"]:checked ~ .mobile-menu {
+  right: 0;
+}
+
+/* Backdrop عبر ::before */
+.mobile-menu::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+  z-index: -1; /* يظل خلف القائمة */
+}
+.css-hamburger input[type="checkbox"]:checked ~ .mobile-menu::before {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* TAB BAR (tablet) */
+.tabbar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  z-index: 50;
+  justify-content: space-around;
+  padding: 8px 0;
+}
+.tabbar a {
+  text-decoration: none;
+  color: #0b6b3a;
+  font-size: 14px;
+  padding: 6px 8px;
+  font-weight: 600;
+}
+
+/* MINDSET SECTION */
+.mindset {
+  background: linear-gradient(180deg, #e9f7ee 0%, #ffffff 100%);
+  display: flex;
+  align-items: center;
+  padding: 40px 0;
+}
+.mindset .lead { max-width: 780px; }
+
+/* On laptop and larger set half viewport height */
+@media (min-width: 1024px) {
+  .mindset { min-height: 50vh; }
+}
+
+/* CARDS GRID */
+.cards-section { padding: 32px 0; }
+.cards-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+.card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 14px rgba(15,15,15,0.06);
+}
+.card img { width: 100%; height: 180px; object-fit: cover; display:block; }
+.card h3 { margin: 12px 16px 6px; }
+.card p { margin: 0 16px 16px; color:#444; font-size: 14px; }
+
+/* Responsive grid: 2 cols on medium, 3 cols on large */
+@media (min-width: 700px) {
+  .cards-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .cards-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* CONTACT FORM */
+.contact-section { padding: 32px 0; background: #fff; }
+.contact-section form {
+  display: grid;
+  gap: 12px;
+  max-width: 700px;
+}
+.contact-section label {
+  display: block;
+  font-size: 14px;
+}
+.contact-section input,
+.contact-section textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.contact-section .btn {
+  padding: 10px 14px;
+  background: #0b6b3a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.form-note { color: #666; font-size: 13px; }
+
+/* FOOTER */
+.site-footer {
+  padding: 20px 0;
+  background: #0b6b3a;
+  color: #fff;
+  text-align: center;
+}
+
+/* GO TO TOP anchor */
+.go-top {
+  position: fixed;
+  right: 18px;
+  bottom: 24px;
+  background: #0b6b3a;
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 44px;
+  text-decoration: none;
+  font-size: 18px;
+  z-index: 90;
+}
+
+/* --- VISIBILITY RULES --- */
+
+/* Mobile-first (default <768px): يظهر الهامبرجر فقط */
+.navbar { display: none; }
+.tabbar { display: none; }
+.css-hamburger { display: inline-block; }
+
+/* Tablet (768px–1023px): يظهر tabbar فقط */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .tabbar { display: flex; }
+  .css-hamburger { display: none; }
+  .navbar { display: none; }
+  .go-top { bottom: 64px; } /* avoid overlap with tabbar */
+}
+
+/* Laptop وما فوق (≥1024px): يظهر navbar فقط */
+@media (min-width: 1024px) {
+  .navbar { display: block; }
+  .css-hamburger { display: none; }
+  .tabbar { display: none; }
+  .go-top { bottom: 24px; }
+}
+
+/* small visual tweaks */
+h1, h2 { color: #0b6b3a; margin: 0 0 12px; }
+h1 { font-size: 28px; }
+h2 { font-size: 22px; margin-top: 8px; }
+
+/* ===== Mobile menu using :target (no JS, no checkbox) ===== */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 78%;
+  max-width: 320px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -6px 0 20px rgba(0,0,0,0.12);
+  transition: right 220ms ease;
+  z-index: 100;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* تظهر القائمة عند استهداف #menu */
+.mobile-menu:target {
+  right: 0;
+}
+
+/* خلفية شفافة وراء القائمة */
+.mobile-menu:target::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 90;
+}
+
+/* تنسيق الروابط */
+.mobile-menu ul { list-style: none; padding: 0; margin: 24px 0 0; }
+.mobile-menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 8px;
+  text-decoration: none;
+  color: #0b6b3a;
+  border-bottom: 1px solid #eee;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* على الشاشات ≤1023px: نخفي النصوص ونبقي الأيقونات فقط */
+@media (max-width: 1023px) {
+  .mobile-menu .menu-text { display: none; }
+  .mobile-menu a { justify-content: center; }
+  .tabbar a { font-size: 22px; }
+}
+
+/* tabbar (شريط الأيقونات أسفل التابلت) */
+.tabbar a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  padding: 8px;
+  color: #0b6b3a;
+  text-decoration: none;
+}
+
+/* داخل قائمة الموبايل: أيقونات + نصوص */
+.mobile-menu a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+}
+
+/* أيقونة */
+.mobile-menu i {
+  font-size: 20px;
+  color: #0b6b3a;
+}
+
+/* عند الشاشات الصغيرة جدًا (<480px): نخفي النصوص ونبقي الأيقونات */
+@media (max-width: 480px) {
+  .mobile-menu a span {
+    display: none;
+  }
+  .mobile-menu a {
+    justify-content: center;
+    padding: 14px;
+  }
+}
+/* ===== تعديل مظهر روابط قائمة الموبايل ===== */
+.mobile-menu label {
+  display: block;
+  cursor: pointer; /* يخلي الرابط يبان طبيعي */
+}
+
+.mobile-menu label a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 10px;
+  text-decoration: none;
+  color: #0b6b3a;
+  border-bottom: 1px solid #eee;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* أيقونة داخل الرابط */
+.mobile-menu label a i {
+  font-size: 20px;
+  width: 28px;
+  text-align: center;
+  flex: 0 0 28px;
+  line-height: 1;
+}
+
+/* على الشاشات ≤1023px نخفي النص ونبقي الأيقونات */
+@media (max-width: 1023px) {
+  .mobile-menu .menu-text {
+    display: none;
+  }
+  .mobile-menu label a {
+    justify-content: center;
+  }
+}
+/* ===== Tabbar icons only ===== */
+.tabbar a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;   /* حجم الأيقونات */
+  color: #0b6b3a;
+  padding: 8px;
+}
+
+.tabbar a i {
+  pointer-events: none; /* عشان الأيقونة نفسها ما تمنع الضغط على الرابط */
+}

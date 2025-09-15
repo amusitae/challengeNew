@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Palestine Governorates — HTML & CSS Only</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- top anchor -->
+  <a id="top" class="sr-only" href="#top">Top</a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner container">
+
+      <!-- SVG Logo (inline) -->
+      <a href="#top" class="logo" aria-label="Logo">
+        <svg width="56" height="56" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img">
+          <title>Logo</title>
+          <circle cx="50" cy="50" r="48" fill="#0b6b3a"/>
+          <path d="M20 60 C30 45, 45 40, 60 50" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+          <text x="50" y="78" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">Palestine</text>
+        </svg>
+      </a>
+
+      <!-- DESKTOP NAVBAR -->
+      <nav class="navbar" aria-label="Main navigation">
+        <ul>
+          <li><a href="#top">Top</a></li>
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#palestine">Palestine</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#bottom">Bottom</a></li>
+        </ul>
+      </nav>
+
+      <!-- CSS-only hamburger: checkbox toggle (visible on small screens) -->
+      <!-- CSS-only hamburger using :target (no checkbox) -->
+<div class="css-hamburger">
+  <!-- زر الهامبرجر يفتح القائمة -->
+  <a href="#menu" class="hamburger-btn" aria-expanded="false" aria-controls="menu">☰</a>
+
+  <!-- قائمة الموبايل (عند الضغط على أي رابط تنغلق تلقائياً) -->
+  <nav id="menu" class="mobile-menu" aria-label="Mobile navigation">
+    <ul>
+      <li><a href="#top">top↑<span class="menu-text">Top</span></a></li>
+      <li><a href="#introduction">introduction📘<span class="menu-text">Introduction</span></a></li>
+      <li><a href="#palestine">palestine🗺️<span class="menu-text">Palestine</span></a></li>
+      <li><a href="#contact">contact✉️<span class="menu-text">Contact</span></a></li>
+      <li><a href="#bottom">bottom↓<span class="menu-text">Bottom</span></a></li>
+    </ul>
+  </nav>
+</div>
+
+    </div>
+  </header>
+
+  <!-- TAB BAR (icons only) -->
+  <nav class="tabbar" aria-label="Tab navigation">
+    <a href="#top">↑</a>
+    <a href="#introduction">📘</a>
+    <a href="#palestine">🗺️</a>
+    <a href="#contact">✉️</a>
+    <a href="#bottom">↓</a>
+  </nav>
+
+  <main>
+    <!-- BUILD YOUR MINDSET (half laptop screen height on >=1024px) -->
+    <section id="introduction" class="mindset">
+      <div class="container">
+        <h1>Build your mindset</h1>
+        <p class="lead">A short motivational paragraph. This section occupies half the laptop screen height.</p>
+      </div>
+    </section>
+
+    <!-- CARDS OF PALESTINE -->
+    <section id="palestine" class="cards-section">
+      <div class="container">
+        <h2>Palestine Governorates</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <img src="image/Bethlehem-West-Bank.webp" alt="Bethlehem">
+            <h3>Bethlehem</h3>
+            <p>Bethlehem is a historic city famous for religious sites and cultural heritage.</p>
+          </article>
+
+          <article class="card">
+            <img src="image/tower-of-david.jpg" alt="Hebron">
+            <h3>Hebron</h3>
+            <p>Hebron is an ancient city known for its old markets and historic architecture.</p>
+          </article>
+
+          <article class="card">
+            <img src="image/a3c263e_442425329-dsc07880.avif" alt="Jenin">
+            <h3>Jenin</h3>
+            <p>Jenin is in the north of the West Bank with a strong agricultural tradition.</p>
+          </article>
+
+          <article class="card">
+            <img src="image/30903-istockgetty-images-plusyulia-b_source_file.jpg" alt="Jericho">
+            <h3>Jericho</h3>
+            <p>One of the oldest inhabited cities in the world, located near the Jordan Valley.</p>
+          </article>
+
+          <article class="card">
+            <img src="image/250px-مسجد_النصر_في_مدينة_نابلس_في_البلدة_القديمة.jpg" alt="Nablus">
+            <h3>Nablus</h3>
+            <p>Nablus is famous for historic soap-making and old city markets.</p>
+          </article>
+
+          <article class="card">
+            <img src="image/images.jfif" alt="Qalqilya">
+            <h3>Qalqilya</h3>
+            <p>Qalqilya is a small city near the coastal plains, with a tight-knit community.</p>
+          </article>
+
+          <article class="card">
+            <img src="image/download.jfif" alt="Quds (Jerusalem)">
+            <h3>Quds (Jerusalem)</h3>
+            <p>Al-Quds (Jerusalem) is a city of profound historical and religious importance.</p>
+          </article>
+
+          <article class="card">
+            <img src="image/download rama.jfif" alt="Ramallah">
+            <h3>Ramallah</h3>
+            <p>Ramallah is a modern administrative and cultural center in the West Bank.</p>
+          </article>
+
+          <article class="card">
+            <img src="https://via.placeholder.com/400x250?text=Deir+al-Balah" alt="Deir al-Balah">
+            <h3>Deir al-Balah</h3>
+            <p>Deir al-Balah is located in the central Gaza Strip and is known for date palms.</p>
+          </article>
+
+          <article class="card">
+            <img src="https://via.placeholder.com/400x250?text=Gaza" alt="Gaza">
+            <h3>Gaza</h3>
+            <p>Gaza is the largest city in the Gaza Strip with a long coastal history.</p>
+          </article>
+
+          <article class="card">
+            <img src="https://via.placeholder.com/400x250?text=Khan+Yunis" alt="Khan Yunis">
+            <h3>Khan Yunis</h3>
+            <p>Khan Yunis is a major city in the south of the Gaza Strip.</p>
+          </article>
+
+          <article class="card">
+            <img src="https://via.placeholder.com/400x250?text=Rafah" alt="Rafah">
+            <h3>Rafah</h3>
+            <p>Rafah sits at the southern tip of the Gaza Strip, bordering Egypt.</p>
+          </article>
+
+          <article class="card">
+            <img src="https://via.placeholder.com/400x250?text=Tulkarm" alt="Tulkarm">
+            <h3>Tulkarm</h3>
+            <p>Tulkarm is a West Bank agricultural and commercial center.</p>
+          </article>
+
+          <article class="card">
+            <img src="https://via.placeholder.com/400x250?text=Tubas" alt="Tubas">
+            <h3>Tubas</h3>
+            <p>Tubas is in the northeastern West Bank, near the Jordan Valley.</p>
+          </article>
+
+          <article class="card">
+            <img src="https://via.placeholder.com/400x250?text=Salfit" alt="Salfit">
+            <h3>Salfit</h3>
+            <p>Salfit is a smaller governorate known for olive groves and hills.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM (HTML validation only) -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2>Contact me</h2>
+        <form id="contactForm" action="#" method="post">
+          <label>
+            Name
+            <input type="text" name="name" required />
+          </label>
+
+          <label>
+            Subject
+            <input type="text" name="subject" />
+          </label>
+
+          <label>
+            Phone
+            <input type="tel" name="phone" inputmode="numeric"
+              pattern="^[0-9]{7,15}$"
+              title="Enter digits only (7–15 digits)"
+              required />
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email"
+              pattern="^[a-zA-Z0-9._%+-]+@ftu\.ac\.th$"
+              title="Email must be from @ftu.ac.th"
+              required />
+          </label>
+
+          <label>
+            Secret word
+            <input type="password" name="secret"
+              pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}"
+              title="At least 8 characters, include uppercase, lowercase, number & special character"
+              required />
+          </label>
+
+          <label>
+            Message
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+
+          <button type="submit" class="btn">Send</button>
+        </form>
+        <p class="form-note">Validation uses HTML attributes (pattern, required, type).</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="bottom" class="site-footer">
+    <div class="container">
+      <p>© 2025 — Amani. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- GO TO TOP (CSS-only: anchor link) -->
+  <a class="go-top" href="#top" aria-label="Go to top" title="Go to top">↑</a>
+
+</body>
+</html>
